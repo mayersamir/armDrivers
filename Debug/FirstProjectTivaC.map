@@ -1,0 +1,266 @@
+******************************************************************************
+                  TI ARM Linker PC v18.12.3                    
+******************************************************************************
+>> Linked Tue Dec  3 20:11:31 2019
+
+OUTPUT FILE NAME:   <FirstProjectTivaC.out>
+ENTRY POINT SYMBOL: "_c_int00_noargs"  address: 00000de9
+
+
+MEMORY CONFIGURATION
+
+         name            origin    length      used     unused   attr    fill
+----------------------  --------  ---------  --------  --------  ----  --------
+  FLASH                 00000000   00040000  00000f34  0003f0cc  R  X
+  SRAM                  20000000   00008000  000004e9  00007b17  RW X
+
+
+SEGMENT ALLOCATION MAP
+
+run origin  load origin   length   init length attrs members
+----------  ----------- ---------- ----------- ----- -------
+00000000    00000000    00000f34   00000f34    r-x
+  00000000    00000000    0000026c   0000026c    r-- .intvecs
+  0000026c    0000026c    00000bfc   00000bfc    r-x .text
+  00000e68    00000e68    000000cc   000000cc    r-- .cinit
+20000000    20000000    000004f0   00000000    rw-
+  20000000    20000000    000002e9   00000000    rw- .data
+  200002f0    200002f0    00000200   00000000    rw- .stack
+
+
+SECTION ALLOCATION MAP
+
+ output                                  attributes/
+section   page    origin      length       input sections
+--------  ----  ----------  ----------   ----------------
+.intvecs   0    00000000    0000026c     
+                  00000000    0000026c     tm4c123gh6pm_startup_ccs.obj (.intvecs)
+
+.text      0    0000026c    00000bfc     
+                  0000026c    0000038c     Dio.obj (.text)
+                  000005f8    00000338     Port.obj (.text)
+                  00000930    000001a8     Nvic.obj (.text)
+                  00000ad8    000000f0     SystCtrl.obj (.text)
+                  00000bc8    000000d8     GInterrupt.obj (.text)
+                  00000ca0    0000009c     rtsv7M4_T_le_v4SPD16_eabi.lib : memcpy_t2.asm.obj (.text)
+                  00000d3c    00000068                                   : copy_decompress_lzss.c.obj (.text:decompress:lzss:__TI_decompress_lzss)
+                  00000da4    00000044                                   : autoinit.c.obj (.text:__TI_auto_init_nobinit_nopinit:__TI_auto_init_nobinit_nopinit)
+                  00000de8    00000034                                   : boot_cortex_m.c.obj (.text:_c_int00_noargs:_c_int00_noargs)
+                  00000e1c    00000028     main.obj (.text)
+                  00000e44    0000000e     rtsv7M4_T_le_v4SPD16_eabi.lib : copy_decompress_none.c.obj (.text:decompress:none:__TI_decompress_none)
+                  00000e52    0000000e     tm4c123gh6pm_startup_ccs.obj (.text)
+                  00000e60    00000004     rtsv7M4_T_le_v4SPD16_eabi.lib : pre_init.c.obj (.text:_system_pre_init)
+                  00000e64    00000004                                   : exit.c.obj (.text:abort:abort)
+
+.cinit     0    00000e68    000000cc     
+                  00000e68    000000bb     (.cinit..data.load) [load image, compression = lzss]
+                  00000f23    00000001     --HOLE-- [fill = 0]
+                  00000f24    00000008     (__TI_handler_table)
+                  00000f2c    00000008     (__TI_cinit_table)
+
+.init_array 
+*          0    00000000    00000000     UNINITIALIZED
+
+.data      0    20000000    000002e9     UNINITIALIZED
+                  20000000    000001ac     GInterrupt.obj (.data:g_pfnVirualVectors)
+                  200001ac    0000012d     Port_Lcfg.obj (.data:PortCfgArr)
+                  200002d9    0000000f     Nvic_Lcfg.obj (.data:intArrCfg)
+                  200002e8    00000001     GInterrupt.obj (.data)
+
+.stack     0    200002f0    00000200     UNINITIALIZED
+                  200002f0    00000004     rtsv7M4_T_le_v4SPD16_eabi.lib : boot_cortex_m.c.obj (.stack)
+                  200002f4    000001fc     --HOLE--
+
+MODULE SUMMARY
+
+       Module                         code   ro data   rw data
+       ------                         ----   -------   -------
+    .\
+       tm4c123gh6pm_startup_ccs.obj   14     620       0      
+       main.obj                       40     0         0      
+    +--+------------------------------+------+---------+---------+
+       Total:                         54     620       0      
+                                                              
+    .\MCAL\Dio\src\
+       Dio.obj                        908    0         0      
+    +--+------------------------------+------+---------+---------+
+       Total:                         908    0         0      
+                                                              
+    .\MCAL\Nvic\cfg\
+       Nvic_Lcfg.obj                  0      0         15     
+    +--+------------------------------+------+---------+---------+
+       Total:                         0      0         15     
+                                                              
+    .\MCAL\Nvic\src\
+       Nvic.obj                       424    0         0      
+    +--+------------------------------+------+---------+---------+
+       Total:                         424    0         0      
+                                                              
+    .\MCAL\Port\cfg\src\
+       Port_Lcfg.obj                  0      0         301    
+    +--+------------------------------+------+---------+---------+
+       Total:                         0      0         301    
+                                                              
+    .\MCAL\Port\src\
+       Port.obj                       824    0         0      
+    +--+------------------------------+------+---------+---------+
+       Total:                         824    0         0      
+                                                              
+    .\MCAL\SystCtrl\src\
+       SystCtrl.obj                   240    0         0      
+    +--+------------------------------+------+---------+---------+
+       Total:                         240    0         0      
+                                                              
+    .\lib\globalInterrupt\src\
+       GInterrupt.obj                 216    0         429    
+    +--+------------------------------+------+---------+---------+
+       Total:                         216    0         429    
+                                                              
+    C:\ti\ccs920\ccs\tools\compiler\ti-cgt-arm_18.12.3.LTS\lib\rtsv7M4_T_le_v4SPD16_eabi.lib
+       memcpy_t2.asm.obj              156    0         0      
+       copy_decompress_lzss.c.obj     104    0         0      
+       autoinit.c.obj                 68     0         0      
+       boot_cortex_m.c.obj            52     0         0      
+       copy_decompress_none.c.obj     14     0         0      
+       exit.c.obj                     4      0         0      
+       pre_init.c.obj                 4      0         0      
+    +--+------------------------------+------+---------+---------+
+       Total:                         402    0         0      
+                                                              
+       Stack:                         0      0         512    
+       Linker Generated:              0      203       0      
+    +--+------------------------------+------+---------+---------+
+       Grand Total:                   3068   823       1257   
+
+
+LINKER GENERATED COPY TABLES
+
+__TI_cinit_table @ 00000f2c records: 1, size/record: 8, table size: 8
+	.data: load addr=00000e68, load size=000000bb bytes, run addr=20000000, run size=000002e9 bytes, compression=lzss
+
+
+LINKER GENERATED HANDLER TABLE
+
+__TI_handler_table @ 00000f24 records: 2, size/record: 4, table size: 8
+	index: 0, handler: __TI_decompress_lzss
+	index: 1, handler: __TI_decompress_none
+
+
+GLOBAL SYMBOLS: SORTED ALPHABETICALLY BY Name 
+
+address   name                          
+-------   ----                          
+00000e65  C$$EXIT                       
+00000569  Dio_FlipPort                  
+0000026d  Dio_ReadChannel               
+00000493  Dio_ReadPort                  
+00000341  Dio_WriteChannel              
+000004fd  Dio_WritePort                 
+00000e5f  IntVirDefaultFun              
+000005f9  PORT_init                     
+00000bfd  PortAISRHandler               
+00000c07  PortBISRHandler               
+00000c11  PortCISRHandler               
+200001ac  PortCfgArr                    
+00000c1b  PortDISRHandler               
+00000c25  PortEISRHandler               
+00000c2f  PortFISRHandler               
+00000e53  ResetISR                      
+00000ad9  SysCtr_init                   
+200004f0  __STACK_END                   
+00000200  __STACK_SIZE                  
+200004f0  __STACK_TOP                   
+00000f2c  __TI_CINIT_Base               
+00000f34  __TI_CINIT_Limit              
+00000f24  __TI_Handler_Table_Base       
+00000f2c  __TI_Handler_Table_Limit      
+00000da5  __TI_auto_init_nobinit_nopinit
+00000d3d  __TI_decompress_lzss          
+00000e45  __TI_decompress_none          
+ffffffff  __TI_pprof_out_hndl           
+ffffffff  __TI_prof_data_size           
+ffffffff  __TI_prof_data_start          
+00000000  __TI_static_base__            
+00000ca1  __aeabi_memcpy                
+00000ca1  __aeabi_memcpy4               
+00000ca1  __aeabi_memcpy8               
+ffffffff  __binit__                     
+ffffffff  __c_args__                    
+UNDEFED   __mpu_init                    
+200002f0  __stack                       
+00000de9  _c_int00_noargs               
+UNDEFED   _system_post_cinit            
+00000e61  _system_pre_init              
+00000e65  abort                         
+ffffffff  binit                         
+00000be3  deInstallNIVCISRFunction      
+00000000  g_pfnVectors                  
+20000000  g_pfnVirualVectors            
+00000bc9  installNIVCISRFunction        
+200002d9  intArrCfg                     
+00000e1d  main                          
+00000ca1  memcpy                        
+00000931  nvicInit                      
+00000c39  setArmMode                    
+00000c65  swiHandler                    
+
+
+GLOBAL SYMBOLS: SORTED BY Symbol Address 
+
+address   name                          
+-------   ----                          
+00000000  __TI_static_base__            
+00000000  g_pfnVectors                  
+00000200  __STACK_SIZE                  
+0000026d  Dio_ReadChannel               
+00000341  Dio_WriteChannel              
+00000493  Dio_ReadPort                  
+000004fd  Dio_WritePort                 
+00000569  Dio_FlipPort                  
+000005f9  PORT_init                     
+00000931  nvicInit                      
+00000ad9  SysCtr_init                   
+00000bc9  installNIVCISRFunction        
+00000be3  deInstallNIVCISRFunction      
+00000bfd  PortAISRHandler               
+00000c07  PortBISRHandler               
+00000c11  PortCISRHandler               
+00000c1b  PortDISRHandler               
+00000c25  PortEISRHandler               
+00000c2f  PortFISRHandler               
+00000c39  setArmMode                    
+00000c65  swiHandler                    
+00000ca1  __aeabi_memcpy                
+00000ca1  __aeabi_memcpy4               
+00000ca1  __aeabi_memcpy8               
+00000ca1  memcpy                        
+00000d3d  __TI_decompress_lzss          
+00000da5  __TI_auto_init_nobinit_nopinit
+00000de9  _c_int00_noargs               
+00000e1d  main                          
+00000e45  __TI_decompress_none          
+00000e53  ResetISR                      
+00000e5f  IntVirDefaultFun              
+00000e61  _system_pre_init              
+00000e65  C$$EXIT                       
+00000e65  abort                         
+00000f24  __TI_Handler_Table_Base       
+00000f2c  __TI_CINIT_Base               
+00000f2c  __TI_Handler_Table_Limit      
+00000f34  __TI_CINIT_Limit              
+20000000  g_pfnVirualVectors            
+200001ac  PortCfgArr                    
+200002d9  intArrCfg                     
+200002f0  __stack                       
+200004f0  __STACK_END                   
+200004f0  __STACK_TOP                   
+ffffffff  __TI_pprof_out_hndl           
+ffffffff  __TI_prof_data_size           
+ffffffff  __TI_prof_data_start          
+ffffffff  __binit__                     
+ffffffff  __c_args__                    
+ffffffff  binit                         
+UNDEFED   __mpu_init                    
+UNDEFED   _system_post_cinit            
+
+[53 symbols]
