@@ -115,6 +115,7 @@ void systickISR( void )
         if(sysTickPtr != NULL)
         {
             sysTickPtr();
+            ;
         }
         else
         {
