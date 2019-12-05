@@ -9,6 +9,11 @@
 #include "Dio_Interface.h"
 #include "SystCtrl_Interface.h"
 #include "Nvic_Interface.h"
+#include "Systick.h"
+static volatile flag = 0;
+
+void toggLed(void);
+
 
 int main(void)
 {
@@ -17,13 +22,31 @@ int main(void)
     SysCtr_init();
     PORT_init();
 
-    Dio_WriteChannel(Dio_Channel_F0, STD_high);
-    Dio_WriteChannel(Dio_Channel_F1, STD_high);
-    Dio_WriteChannel(Dio_Channel_F2, STD_high);
+    setSysTickCallBack(toggLed);
+    sysTickInit();
+
+
 
     while(1)
     {
 
     }
 	return 0;
+}
+
+void toggLed(void)
+{
+    if(flag == 0)
+    {
+        Dio_WriteChannel(Dio_Channel_F1, STD_high);
+        Dio_WriteChannel(Dio_Channel_F2, STD_high);
+        flag = 1;
+    }
+    else
+    {
+        Dio_WriteChannel(Dio_Channel_F1, STD_low);
+        Dio_WriteChannel(Dio_Channel_F2, STD_low);
+        flag = 0;
+    }
+
 }

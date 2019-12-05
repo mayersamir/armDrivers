@@ -37,6 +37,7 @@ static void NmiSR(void);
 static void FaultISR(void);
 static void IntDefaultHandler(void);
 extern void swiHandler(void);
+extern void systickISR( void );
 //*****************************************************************************
 //
 // External declaration for the reset handler that is to be called when the
@@ -85,7 +86,7 @@ void (* const g_pfnVectors[])(void) =
     IntDefaultHandler,                      // Debug monitor handler
     0,                                      // Reserved
     IntDefaultHandler,                      // The PendSV handler
-    IntDefaultHandler,                      // The SysTick handler
+    systickISR,                      // The SysTick handler
     PortAISRHandler,                        // GPIO Port A
     PortBISRHandler,                        // GPIO Port B
     PortCISRHandler,                        // GPIO Port C

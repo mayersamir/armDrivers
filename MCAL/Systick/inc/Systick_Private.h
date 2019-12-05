@@ -11,11 +11,19 @@
 
 
 
-#define   SYSTICK_STCTRL  *((volatile uint32*const)(0xE000E010))
+#define   SYSTICK_STCTRL  *((volatile uint32*)(0xE000E010))
+#define   STCTRL_ENABLE   0
+#define   STCTRL_INTEN    1
+#define   STCTRL_CLKSRC   2
+#define   STCTRL_COUNT    16
 
-#define   SYSTICK_STRELOAD    *((volatile uint32*const)(0xE000E014))
 
-#define   SYSTICK_STCURRENT   *((volatile uin32*const)(0xE000E018))
+
+#define   SYSTICK_STRELOAD    *((volatile uint32*)(0xE000E014))
+
+
+
+#define   SYSTICK_STCURRENT   *((volatile uin32*)(0xE000E018))
 
 
 
