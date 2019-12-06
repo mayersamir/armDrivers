@@ -17,6 +17,7 @@ ORDERED_OBJS += \
 "./MCAL/Nvic/src/Nvic.obj" \
 "./MCAL/Port/cfg/src/Port_Lcfg.obj" \
 "./MCAL/Port/src/Port.obj" \
+"./MCAL/SystCtrl/cfg/src/SystCtrl_Lcfg.obj" \
 "./MCAL/SystCtrl/src/SystCtrl.obj" \
 "./MCAL/Systick/src/Systick.obj" \
 "./lib/globalInterrupt/src/GInterrupt.obj" \
@@ -37,6 +38,7 @@ RMDIR := RMDIR /S/Q
 -include MCAL/Nvic/src/subdir_vars.mk
 -include MCAL/Port/cfg/src/subdir_vars.mk
 -include MCAL/Port/src/subdir_vars.mk
+-include MCAL/SystCtrl/cfg/src/subdir_vars.mk
 -include MCAL/SystCtrl/src/subdir_vars.mk
 -include MCAL/Systick/src/subdir_vars.mk
 -include lib/globalInterrupt/src/subdir_vars.mk
@@ -46,6 +48,7 @@ RMDIR := RMDIR /S/Q
 -include MCAL/Nvic/src/subdir_rules.mk
 -include MCAL/Port/cfg/src/subdir_rules.mk
 -include MCAL/Port/src/subdir_rules.mk
+-include MCAL/SystCtrl/cfg/src/subdir_rules.mk
 -include MCAL/SystCtrl/src/subdir_rules.mk
 -include MCAL/Systick/src/subdir_rules.mk
 -include lib/globalInterrupt/src/subdir_rules.mk
@@ -179,8 +182,8 @@ FirstProjectTivaC.hex: $(EXE_OUTPUTS)
 # Other Targets
 clean:
 	-$(RM) $(BIN_OUTPUTS__QUOTED)$(EXE_OUTPUTS__QUOTED)
-	-$(RM) "main.obj" "tm4c123gh6pm_startup_ccs.obj" "MCAL\Dio\src\Dio.obj" "MCAL\Nvic\cfg\Nvic_Lcfg.obj" "MCAL\Nvic\src\Nvic.obj" "MCAL\Port\cfg\src\Port_Lcfg.obj" "MCAL\Port\src\Port.obj" "MCAL\SystCtrl\src\SystCtrl.obj" "MCAL\Systick\src\Systick.obj" "lib\globalInterrupt\src\GInterrupt.obj" 
-	-$(RM) "main.d" "tm4c123gh6pm_startup_ccs.d" "MCAL\Dio\src\Dio.d" "MCAL\Nvic\cfg\Nvic_Lcfg.d" "MCAL\Nvic\src\Nvic.d" "MCAL\Port\cfg\src\Port_Lcfg.d" "MCAL\Port\src\Port.d" "MCAL\SystCtrl\src\SystCtrl.d" "MCAL\Systick\src\Systick.d" "lib\globalInterrupt\src\GInterrupt.d" 
+	-$(RM) "main.obj" "tm4c123gh6pm_startup_ccs.obj" "MCAL\Dio\src\Dio.obj" "MCAL\Nvic\cfg\Nvic_Lcfg.obj" "MCAL\Nvic\src\Nvic.obj" "MCAL\Port\cfg\src\Port_Lcfg.obj" "MCAL\Port\src\Port.obj" "MCAL\SystCtrl\cfg\src\SystCtrl_Lcfg.obj" "MCAL\SystCtrl\src\SystCtrl.obj" "MCAL\Systick\src\Systick.obj" "lib\globalInterrupt\src\GInterrupt.obj" 
+	-$(RM) "main.d" "tm4c123gh6pm_startup_ccs.d" "MCAL\Dio\src\Dio.d" "MCAL\Nvic\cfg\Nvic_Lcfg.d" "MCAL\Nvic\src\Nvic.d" "MCAL\Port\cfg\src\Port_Lcfg.d" "MCAL\Port\src\Port.d" "MCAL\SystCtrl\cfg\src\SystCtrl_Lcfg.d" "MCAL\SystCtrl\src\SystCtrl.d" "MCAL\Systick\src\Systick.d" "lib\globalInterrupt\src\GInterrupt.d" 
 	-@echo 'Finished clean'
 	-@echo ' '
 

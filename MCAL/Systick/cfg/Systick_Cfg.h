@@ -12,13 +12,13 @@
 
 #define SYSTICK_TIME_TYPE      TICK_MILLI
 
-#define SYSTICK_TICK_TIME      4000
+#define SYSTICK_TICK_TIME      4000UL
 
 #define SYSTICK_CLK_SRC        SYSTICK_SYSTEM_CLK
 
 #define SYSTICK_STATE          SYSTICK_ENABLE
 
-#define SYSTICK_FREQ           (16000000)
+#define SYSTICK_FREQ           (20000000UL)
 
 
 

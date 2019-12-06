@@ -10,7 +10,7 @@
 #include "SystCtrl_Interface.h"
 #include "Nvic_Interface.h"
 #include "Systick.h"
-static volatile flag = 0;
+static volatile uint8 flag = 0;
 
 void toggLed(void);
 

@@ -117,6 +117,7 @@ MCAL/Nvic/cfg \
 MCAL/Nvic/src \
 MCAL/Port/cfg/src \
 MCAL/Port/src \
+MCAL/SystCtrl/cfg/src \
 MCAL/SystCtrl/src \
 MCAL/Systick/src \
 lib/globalInterrupt/src \
