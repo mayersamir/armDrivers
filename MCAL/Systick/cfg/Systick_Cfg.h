@@ -12,7 +12,7 @@
 
 #define SYSTICK_TIME_TYPE      TICK_MILLI
 
-#define SYSTICK_TICK_TIME      500
+#define SYSTICK_TICK_TIME      4000
 
 #define SYSTICK_CLK_SRC        SYSTICK_SYSTEM_CLK
 
